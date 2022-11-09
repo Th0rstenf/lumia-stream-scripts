@@ -11,7 +11,7 @@ public class CPHInline
     private static JObject buildChatCommand(string command, string color)
     {
         
-		var extraSettings = new JObject();
+	var extraSettings = new JObject();
         extraSettings.Add("message", color);
         var jsonParams = new JObject();
         jsonParams.Add("value", command);
@@ -43,7 +43,7 @@ public class CPHInline
     public bool Execute()
     {
         sendCommand(left, "green");
-		sendCommand(right, "yellow");
-		return true;
+	sendCommand(right, "yellow");
+	return true;
     }
 }
