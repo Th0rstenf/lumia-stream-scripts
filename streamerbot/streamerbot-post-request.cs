@@ -7,7 +7,7 @@ public class CPHInline
 {
     private static string lumiaToken = Environment.GetEnvironmentVariable("LumiaToken");
     private static string left = "colorLeft";
-	private static string right = "colorRight";
+    private static string right = "colorRight";
     private static JObject buildChatCommand(string command, string color)
     {
         
@@ -34,12 +34,12 @@ public class CPHInline
         }
     }
 	
-	private static void sendCommand(string command, string color)
-	{
-		string url = string.Format("http://localhost:39231/api/send?token={0}", lumiaToken);
-		postRequest(url, command, color);
-	}
-
+    private static void sendCommand(string command, string color)
+    {
+        string url = string.Format("http://localhost:39231/api/send?token={0}", lumiaToken);
+        postRequest(url, command, color);
+    }
+	
     public bool Execute()
     {
         sendCommand(left, "green");
