@@ -8,6 +8,10 @@ public class CPHInline
     private static string lumiaToken = Environment.GetEnvironmentVariable("LumiaToken");
     private static string left = "colorLeft";
     private static string right = "colorRight";
+    private static string both = "color";
+    // This delay time is defined by the duration of the interactive Lumia chat commands.
+    //TODO: Check whether it is possible to read that duration via API?
+    private static int delayTimeMs = 30000;
     private static JObject buildChatCommand(string command, string color)
     {
         
@@ -48,12 +52,12 @@ public class CPHInline
         {
             sendCommand(left, colorsArray[0]);
 	        sendCommand(right, colorsArray[1]);
-            //TODO: ensure a wait time, as one of the commands skips the queue
+            CPH.Wait(delayTimeMs);
         }
         else if (colorsArray.Length == 1)
         {
-            sendCommand("color",colors);
-            
+            sendCommand(both, colors);
+            CPH.Wait(delayTimeMs);   
         }
         else
         {
