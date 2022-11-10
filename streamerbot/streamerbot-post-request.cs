@@ -43,7 +43,7 @@ public class CPHInline
     public bool Execute()
     {
         sendCommand(left, "green");
-	sendCommand(right, "yellow");
+	    sendCommand(right, "yellow");
 	return true;
     }
 }
